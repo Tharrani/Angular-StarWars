@@ -1,0 +1,14 @@
+.pagination{
+    cursor: pointer;
+}
+
+ul li{
+    display: inline;
+}
+
+.disabledtext{
+    color: grey;
+    cursor: default;
+}
+
+

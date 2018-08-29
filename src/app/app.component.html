@@ -1,20 +1,58 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div style="text-align:center" *ngIf="categoryselected">
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <img width="300" alt="Star Wars Logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb8OuDdyiAQfgiq_QXSMKm29Jf_rK3W1v7VJ9nkw7YPlr43z0o">
+<!--  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="> -->
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<h2>Start Exploring the Star Wars Universe: </h2>
+    <div *ngIf="categoryselected">
+        <app-category *ngFor="let c of categorylist" [category]= c (selectCategory)="select($event)">
+        </app-category> 
+    </div>
+
+<!-- Second Page Page -->
+<div *ngIf = "itemselected">
+    <button type="button" value="button" (click)="gotocategory()">Back</button>
+  <div>
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+        <li [ngClass]="page-item">
+            <a  (click)="setPage(1, false)">First</a> 
+        </li>
+        <li>
+            <a (click)="setPage(pager.currentPage - 1, false)"> Previous</a>
+        </li>
+        <li *ngFor="let page of pager.pages">
+            <a (click)="setPage(page, false)">{{page}}</a>
+        </li>
+        <li>
+        <a (click)="setPage(pager.currentPage + 1, false)">Next</a>
+        </li>
+        <li>
+        <a (click)="setPage(pager.totalPages, false)">Last</a>
+        </li>
+    </ul>
+  </div>
+
+    <app-itemsincategory [cdetail]= categoryname (selectIteminCategory)="selectItem($event)">
+    </app-itemsincategory>
+</div>
+
+<!-- Third Page -->
+<div *ngIf = "itemdetail">
+    <button type="submit" value="submit" (click)="gotocategorydetails()">Back</button>
+    <app-itemdetails *ngIf = "people_detail!=null" [p] = "people_detail">
+    </app-itemdetails>
+    <app-itemdetails *ngIf = "film_detail!=null" [f] = "film_detail">
+    </app-itemdetails>
+    <app-itemdetails *ngIf = "starship_detail!=null" [ss] = "starship_detail">
+    </app-itemdetails>
+    <app-itemdetails *ngIf = "vehicle_detail!=null" [vh] = "vehicle_detail">
+    </app-itemdetails>
+    <app-itemdetails *ngIf = "species_detail!=null" [sp] = "species_detail">
+    </app-itemdetails>
+    <app-itemdetails *ngIf = "planet_detail!=null" [pl] = "planet_detail">
+    </app-itemdetails>
+  </div>

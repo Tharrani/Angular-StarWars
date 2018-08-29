@@ -1,0 +1,25 @@
+.test{
+    background-color: rgb(160, 9, 72);
+    font-size: 15px;
+    border-style: double solid;
+    border-color: black;
+    border-radius: 8px;
+ }
+
+ table{
+     border-style: double solid;
+     border-color: black;
+     table-layout: auto;
+ }
+
+ wrap{
+     word-wrap: break-word;
+ }
+
+ tr{
+    border-bottom-style: dotted;
+    border-bottom-color : grey;
+ }
+
+ 
+

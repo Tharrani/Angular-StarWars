@@ -1,0 +1,267 @@
+<!-- To display character details-->
+<table *ngIf = "p != null" class="test">
+    <tbody>
+        <img [src]="p.imgURL"  onerror="this.src='assets/img/404.jpg'">
+      <tr>
+        <td > <h2> {{p.name}} </h2> </td>
+      </tr>
+      <tr>
+        <td > Birth Year: </td>
+        <td > {{p. birth_year}}</td>
+      </tr>
+      <tr>
+        <td > Species: </td>
+        <td *ngFor="let c of p.species"> {{c}}<br/> </td>
+      </tr>
+      <tr>
+        <td > Height: </td>
+        <td > {{p.height}} </td>
+      </tr>
+      <tr>
+        <td > Mass: </td>
+        <td > {{p.mass}} </td>
+      </tr>
+      <tr>
+        <td > Gender: </td>
+        <td > {{p.gender}} </td>
+      </tr>
+      <tr>
+        <td > HairColor: </td>
+        <td > {{p.hair_color}} </td>
+      </tr>
+      <tr>
+        <td > SkinColor: </td>
+        <td > {{p.skin_color}}</td>
+      </tr>
+      <tr>
+        <td > HomeWorld: </td>
+        <td > {{p.homeworld}}</td>
+      </tr>
+    </tbody>
+  </table>
+<!-- To display film details-->
+  <table *ngIf = "f != null">
+    <img [src]="f.imgURL"  onerror="this.src='assets/img/404.jpg'">
+    <h2>{{f.title}}</h2>
+    <tbody>
+      <tr>
+        <td > Opening Crawl: </td>
+        <td> {{f.opening_crawl}} </td>
+      </tr>
+      <tr>
+        <td > Episode Id: </td>
+        <td > {{f. episode_id}}</td>
+      </tr>
+      <tr>
+        <td > Director: </td>
+        <td > {{f.director}} </td>
+      </tr>
+      <tr>
+        <td > Producer: </td>
+        <td > {{f.producer}} </td>
+      </tr>
+      <tr>
+        <td > Release Date: </td>
+        <td > {{f.release_date}} </td>
+      </tr>
+      <tr>
+        <td > Characters: </td>
+          <td *ngFor="let c of f.characters" style="display: inline;"> {{c}} <br/> </td>
+      </tr>
+      <tr>
+        <td > Planets: </td>
+        <td *ngFor="let c of f.planets"  style="display: inline;"> {{c}} <br/> </td>
+      </tr>
+      <tr>
+        <td > Species: </td>
+        <td *ngFor="let c of f.species"  style="display: inline;"> {{c}} <br/> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- To display starship details-->
+<table *ngIf = "ss != null">
+    <img [src]="ss.imgURL" onerror="this.src='assets/img/404.jpg'">
+    <h2>{{ss.name}}</h2>
+    <tbody>
+      <tr>
+        <td > Model: </td>
+        <td> {{ss.model}} </td>
+      </tr>
+      <tr>
+        <td > Starship Class: </td>
+        <td > {{ss. starship_class}}</td>
+      </tr>
+      <tr>
+        <td > Cost (in Credits): </td>
+        <td > {{ss.cost_in_credits}} </td>
+      </tr>
+      <tr>
+        <td > Length: </td>
+        <td > {{ss.length}} </td>
+      </tr>
+      <tr>
+        <td > Crew: </td>
+        <td > {{ss.crew}} </td>
+      </tr>
+      <tr>
+        <td > Passengers: </td>
+        <td> {{ss.passengers}} </td>
+      </tr>
+      <tr>
+        <td > Max Atmosphering Speed: </td>
+        <td> {{ss.max_atmosphering_speed}} </td>
+      </tr>
+      <tr>
+        <td > Hyperdrive Rating: </td>
+        <td> {{ss.hyperdrive_rating}} </td>
+      </tr>
+      <tr>
+        <td >  Megalights travel/hour: </td>
+        <td> {{ss.MGLT}} </td>
+      </tr>
+      <tr>
+        <td > Cargo Capacity: </td>
+        <td> {{ss.cargo_capacity}} </td>
+      </tr>
+      <tr>
+        <td > Pilots: </td>
+        <td *ngFor="let c of ss.pilots"> {{c}} <br/> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- To display vehicle details-->
+<table *ngIf = "vh != null">
+    <img [src]="vh.imgURL"  onerror="this.src='assets/img/404.jpg'">
+  <h2>{{vh.name}}</h2>
+  <tbody>
+    <tr>
+      <td > Model: </td>
+      <td> {{vh.model}} </td>
+    </tr>
+    <tr>
+      <td > vehicle Class: </td>
+      <td > {{vh. vehicle_class}}</td>
+    </tr>
+    <tr>
+      <td > Cost (in Credits): </td>
+      <td > {{vh.cost_in_credits}} </td>
+    </tr>
+    <tr>
+      <td > Length: </td>
+      <td > {{vh.length}} </td>
+    </tr>
+    <tr>
+      <td > Crew: </td>
+      <td > {{vh.crew}} </td>
+    </tr>
+    <tr>
+      <td > Passengers: </td>
+      <td> {{vh.passengers}} </td>
+    </tr>
+    <tr>
+      <td > Max Atmosphering Speed: </td>
+      <td> {{vh.max_atmosphering_speed}} </td>
+    </tr>
+    <tr>
+      <td > Manufacturer: </td>
+      <td> {{vh.manufacturer}} </td>
+    </tr>
+    <tr>
+      <td >  Consumables: </td>
+      <td> {{vh.consumables}} </td>
+    </tr>
+    <tr>
+      <td > Cargo Capacity: </td>
+      <td> {{vh.cargo_capacity}} </td>
+    </tr>
+    <tr>
+      <td > Pilots: </td>
+      <td *ngFor="let c of vh.pilots"> {{c}} <br/></td>
+    </tr>
+  </tbody>
+</table>
+  <!-- To display planet details-->
+  <table *ngIf = "pl != null">
+      <img [src]="pl.imgURL"  onerror="this.src='assets/img/404.jpg'">
+    <h2>{{pl.name}}</h2>
+    <tbody>
+      <tr>
+        <td > Diameter: </td>
+        <td> {{pl.diameter}} </td>
+      </tr>
+      <tr>
+        <td > Rotation Period: </td>
+        <td > {{pl. rotation_period}}</td>
+      </tr>
+      <tr>
+        <td > Orbital Period: </td>
+        <td > {{pl.orbital_period}} </td>
+      </tr>
+      <tr>
+        <td > Gravity: </td>
+        <td > {{pl.gravity}} </td>
+      </tr>
+      <tr>
+        <td > Population: </td>
+        <td > {{pl.population}} </td>
+      </tr>
+      <tr>
+        <td > Climate: </td>
+        <td> {{pl.climate}} </td>
+      </tr>
+      <tr>
+        <td > Terrain: </td>
+        <td> {{pl.terrain}} </td>
+      </tr>
+      <tr>
+        <td > Surface Water: </td>
+        <td> {{pl.surface_water}} </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- To display species details-->
+  <table *ngIf = "sp != null">
+      <img [src]="sp.imgURL"  onerror="this.src='assets/img/404.jpg'">
+    <h2>{{sp.name}}</h2>
+    <tbody>
+      <tr>
+        <td > Classification: </td>
+        <td> {{sp.classification}} </td>
+      </tr>
+      <tr>
+        <td > Designation : </td>
+        <td > {{sp. designation}}</td>
+      </tr>
+      <tr>
+        <td > Average Height: </td>
+        <td > {{sp.average_height}} </td>
+      </tr>
+      <tr>
+        <td > Average Lifespan: </td>
+        <td > {{sp.average_lifespan}} </td>
+      </tr>
+      <tr>
+        <td > Eye Colors: </td>
+        <td > {{sp.eye_colors}} </td>
+      </tr>
+      <tr>
+        <td > Hair Colors: </td>
+        <td> {{sp.hair_colors}} </td>
+      </tr>
+      <tr>
+        <td > Skin Colors: </td>
+        <td> {{sp.skin_colors}} </td>
+      </tr>
+      <tr>
+        <td > Language: </td>
+        <td> {{sp.language}} </td>
+      </tr>
+      <tr>
+          <td > HomeWorld: </td>
+          <td> {{sp.homeworld}} </td>
+        </tr>
+    </tbody>
+  </table>

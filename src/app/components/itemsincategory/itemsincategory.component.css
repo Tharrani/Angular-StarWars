@@ -1,0 +1,16 @@
+.test{
+    background-color: rgb(160, 9, 72);
+    font-size: 20px;
+    border-style: solid;
+    border-color: blanchedalmond;
+    border-radius: 8px;
+ }
+
+ table {
+    table-layout: fixed ;
+    width: 25%;
+  }
+
+  td{
+      cursor: pointer;
+  }
